@@ -1,24 +1,91 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ ## users テーブル
 
-Things you may want to cover:
+ | Column              | Type    | Options                  |
+ | ------------------- | ------- | ------------------------ |
+ | nickname            | string  | null: false              |
+ | email               | string  | null: false ,unique: true|
+ | encrypted_password  | string  | null: false              |
+ | prefecture_id       | integer | null: false              |
+ | last_name           | string  | null: false              |
+ | first_name          | string  | null: false              |
+ | last_name_kana      | string  | null: false              |
+ | first_name_kana     | string  | null: false              |
+ | birth_date          | date    | null: false              |
+ | image               | string  |                          |
+ | profile             | text    |                          |
+ 
+ ### Association
+- has_many :reviews
 
-* Ruby version
+ ## shops テーブル
 
-* System dependencies
+ | Column             | Type       | Options                        |
+ | ------------------ | ---------- | ------------------------------ |
+ | shop_name          | string     | null: false                    |
+ | genre_id           | integer    | null: false                    |
+ | phone              | integer    | null: false                    |
+ | prefecture_id        | integer    | null: false                  |
+ | address              | integer    | null: false                   |
+ | traffic            | integer    | null: false                    |
+ | operating_hours    | integer    | null: false                    |
+ | budget_id          | integer    | null: false                    |
+ | seat               | integer    | null: false                    |
+ | other              | integer    | null: false                    |
+ | owner              | references | null: false, foreign_key: true |
+ | operation          | references | null: false, foreign_key: true |
 
-* Configuration
+  ### Association
+- belongs_to :owner
+- belongs_to :operation
+- has_many :reviews
 
-* Database creation
 
-* Database initialization
+ ## reviews テーブル
 
-* How to run the test suite
+ | Column            | Type       | Options                        |
+ | ----------------- | ---------- | ------------------------------ |
+ | title             | string     | null: false                    |
+ | rate              | integer    | null: false                    |
+ | content           | string     | null: false                    |
+ | user              | references | null: false, foreign_key: true |
+ | shop              | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+ - belongs_to :user
+ - belongs_to :shop
 
-* Deployment instructions
+  ## owner テーブル
 
-* ...
+ | Column              | Type       | Options                        |
+ | ------------------- | ---------- | ------------------------------ |
+ | company             | string     |                                |
+ | last_name           | string     | null: false                    |
+ | first_name          | string     | null: false                    |
+ | last_name_kana      | string     | null: false                    |
+ | first_name_kana     | string     | null: false                    |
+ | shop_name           | string     | null: false                    |
+ | personal_phone      | string     | null: false                    |
+ | email               | string     | null: false ,unique: true      |
+ | encrypted_password  | string     | null: false                    |
+ | shop                | references | null: false, foreign_key: true |
+ | operation           | references | null: false, foreign_key: true |
+
+   ### Association
+- has_one :shop
+- belongs_to :operation
+
+  ## operation テーブル
+
+ | Column              | Type       | Options                        |
+ | ------------------- | ---------- | ------------------------------ |
+ | last_name           | string     | null: false                    |
+ | first_name          | string     | null: false                    |
+ | last_name_kana      | string     | null: false                    |
+ | first_name_kana     | string     | null: false                    |
+ | email               | string     | null: false ,unique: true      |
+ | encrypted_password  | string     | null: false                    |
+
+   ### Association
+- has_many :owner
+- has_many :shops
