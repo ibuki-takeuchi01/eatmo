@@ -1,0 +1,179 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+
+
+  <%# 画面上部の「画像スクロール」部分 %>
+<div class = "image-content">
+<div><%= image_tag "logo.png", class:"image" %></div>
+<div><%= image_tag "img_4000.png", class:"image" %></div>
+<div><%= image_tag "img_2781.png", class:"image" %></div>
+</div>
+
+<%# 画面上部の「画像スクロール」部分 %>
+
+  <%# 画面上部の「検索窓」部分 %>
+      <div class='select-index'>
+    <h2 class='title'>
+      キーワードから探す
+    </h2>
+    </div>
+  <div class='title-contents'>
+    <p class='service-explain'>
+      <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワード[例:渋谷、居酒屋、個室]'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+      </button>
+    </form>
+    </p>
+  </div>
+  <%# /画面上部の「検索窓」帯部分  %>
+
+  <%# エリアから探す部分 %>
+  <div class='select-index'>
+    <h2 class='title'>
+      エリアから探す
+    </h2>
+    <ul class='area-lists'>
+      <li class='list'>
+        <%= image_tag "tokyo.png", class:"list-pict" %>
+        <span class='list-area'>東京</span>
+      </li>
+      <li class='list'>
+        <%= image_tag "oosaka.png", class:"list-pict" %>
+        <span class='list-area'>大阪</span>
+      </li>
+      <li class='list'>
+        <%= image_tag "nagano.png", class:"list-pict" %>
+        <span class='list-area'>長野</span>
+      </li>
+      <li class='list'>
+        <%= image_tag "kyoto.png", class:"list-pict" %>
+        <span class='list-area'>京都</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class ='prefecture-lists'>
+    <div class = "top-list">
+      <div class = top-left>
+        <div class =title><span class="col-1">北海道・東北</span>
+        <div class =prefecture>
+          <a href ="#">北海道</a>
+          <a href ="#">青森</a>
+          <a href ="#">秋田</a>
+          <a href ="#">山形</a>
+          <a href ="#">岩手</a>
+          <a href ="#">宮城</a>
+          <a href ="#">福島</a>
+        </div>
+        </div>
+      </div>
+      <div class = top-center>
+        <div class =title><span class="col-1">関東</span>
+        <div class =prefecture>
+          <a href ="#">東京</a>
+          <a href ="#">神奈川</a>
+          <a href ="#">埼玉</a>
+          <a href ="#">千葉</a>
+          <a href ="#">栃木</a>
+          <a href ="#">茨城</a>
+          <a href ="#">群馬</a>
+        </div>
+        </div>
+      </div>
+      <div class = top-right>
+        <div class =title><span class="col-1">中部</span>
+        <div class =prefecture>
+          <a href ="#">愛知</a>
+          <a href ="#">岐阜</a>
+          <a href ="#">静岡</a>
+          <a href ="#">三重</a>
+          <a href ="#">新潟</a>
+          <a href ="#">山梨</a>
+          <a href ="#">長野</a>
+          <a href ="#">石川</a>
+          <a href ="#">富山</a>
+          <a href ="#">福井</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class = "second-list">
+      <div class = top-left>
+        <div class =title><span class="col-1">関西</span>
+        <div class =prefecture>
+          <a href ="#">大阪</a>
+          <a href ="#">兵庫</a>
+          <a href ="#">京都</a>
+          <a href ="#">滋賀</a>
+          <a href ="#">奈良</a>
+          <a href ="#">和歌山</a>
+        </div>
+        </div>
+      </div>
+      <div class = top-center>
+        <div class =title><span class="col-1">中国・四国</span>
+        <div class =prefecture>
+          <a href ="#">岡山</a>
+          <a href ="#">広島</a>
+          <a href ="#">鳥取</a>
+          <a href ="#">島根</a>
+          <a href ="#">山口</a>
+          <a href ="#">香川</a>
+          <a href ="#">徳島</a>
+          <a href ="#">愛媛</a>
+          <a href ="#">高知</a>
+        </div>
+        </div>
+      </div>
+      <div class = top-right>
+        <div class =title><span class="col-1">九州・沖縄</span>
+        <div class =prefecture>
+          <a href ="#">福岡</a>
+          <a href ="#">佐賀</a>
+          <a href ="#">長崎</a>
+          <a href ="#">熊本</a>
+          <a href ="#">大分</a>
+          <a href ="#">宮崎</a>
+          <a href ="#">鹿児島</a>
+          <a href ="#">沖縄</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+  <%# エリアから探す部分 %>
+
+  <%# 口コミ一覧 %>
+  <div class='review-contents'>
+    <div class='select-index'>
+    <h2 class='title'>
+      口コミからお店を探す
+    </h2>
+    </div>
+    <div class="subtitle" >
+      新規口コミ一覧
+    </div>
+    <ul class='review-lists'>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "img_0361.png", class: "review-img" %>
+        <div class='review-info'>
+          <h3 class='review-name'>
+            最高の味でした！
+          </h3>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <%# 口コミ一覧 %>
+
+<%= render "shared/footer" %>

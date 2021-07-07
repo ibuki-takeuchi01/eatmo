@@ -1,0 +1,189 @@
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8f8;
+}
+
+/*  画面上部の「画像スクロール」部分 */
+.image-content {
+  display:flex;
+  overflow-x:scroll;
+  text-align:center;
+  }
+  
+  .image{
+    width:35vw;
+    padding:0.5vw;
+    background-size: contain;
+  }
+  
+/*  画面上部の「画像スクロール」部分 */
+
+/*  画面上部の「検索窓」部分 */
+.title-contents {
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 15vw;
+  color: #fff;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+/* 画面上部の「検索窓」部分 */
+
+/* エリアから探す部分 */
+.select-index {
+  padding: 5vh 5vw;
+}
+
+.select-index>.title {
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.select-index>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #ffa500;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.area-lists {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.area-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.list-pict {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.list-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #ffa500;
+  color: #fff;
+}
+
+.top-list, .second-list{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.col-1 {
+  display: inline-block;
+  width: 200px;
+  margin-left: 50px;
+  /* border: solid 1px; */
+}
+
+.prefecture{
+  width:27vw;
+  margin-left: 50px;
+}
+/* //エリアから探す部分 */
+
+/* 口コミ一覧 */
+
+.review-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.review-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.review-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #ffa500;
+  font-weight: bold;
+}
+
+.review-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.review-img-content {
+  position: relative;
+}
+
+.review-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.review-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.review-name {
+  font-size: 2.5vh;
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+
+/* //口コミ一覧 */
