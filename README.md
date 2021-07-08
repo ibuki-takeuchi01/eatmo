@@ -26,8 +26,8 @@
  | shop_name          | string     | null: false                    |
  | genre_id           | integer    | null: false                    |
  | phone              | integer    | null: false                    |
- | prefecture_id        | integer    | null: false                  |
- | address              | integer    | null: false                   |
+ | prefecture_id      | integer    | null: false                  |
+ | address            | integer    | null: false                   |
  | traffic            | integer    | null: false                    |
  | operating_hours    | integer    | null: false                    |
  | budget_id          | integer    | null: false                    |
@@ -65,7 +65,7 @@
  | last_name_kana      | string     | null: false                    |
  | first_name_kana     | string     | null: false                    |
  | shop_name           | string     | null: false                    |
- | personal_phone      | string     | null: false                    |
+ | personal_phone      | integer    | null: false                   |
  | email               | string     | null: false ,unique: true      |
  | encrypted_password  | string     | null: false                    |
  | shop                | references | null: false, foreign_key: true |
@@ -87,5 +87,5 @@
  | encrypted_password  | string     | null: false                    |
 
    ### Association
-- has_many :owner
+- has_many :owners
 - has_many :shops

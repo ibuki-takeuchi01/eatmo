@@ -28,14 +28,14 @@
       <ul>
         <li><%= link_to 'ヘルプ・お問い合わせ', "#", class: "footer-link" %></li>
         <li><%= link_to 'FAQ', "#", class: "footer-link" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
       </ul>
     </div>
     <div class='furima-details'>
-      <h2 class='footer-content-head'>EATMOについて</h2>
+      <h2 class='footer-content-head'>EATMO管理画面</h2>
       <ul>
-        <li><%= link_to 'EATMO利用ガイド', "#", class: "footer-link" %></li>
-        <li><%= link_to '個人情報保護方針', "#", class: "footer-link" %></li>
-        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+        <li><%= link_to 'クライアントページ', new_owner_session_path, class: "footer-link" %></li>
+        <li><%= link_to '管理者ページ', new_operation_session_path, class: "footer-link" %></li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,68 @@
+
+<h2>新規登録</h2>
+
+<%#= render 'shared/error_messages', model: f.object %>
+<%= form_with model: @user, url: user_registration_path,  local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :nickname %><br/>
+    <%= f.text_field :nickname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+    <div class="field">
+    <%= f.label :last_name_kana %><br />
+    <%= f.text_field :last_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name_kana %><br />
+    <%= f.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date %><br/>
+    <%= f.date_select :birth_date, start_year: 1950, end_year: 2019 %>
+  </div>
+
+    <div class="field">
+    <%= f.label :prefecture_id %><br />
+    <%= f.text_field :prefecture_id, start_year: 1950, end_year: 2019 %>
+  </div>
+
+    <div class="field">
+    <%= f.label :profile %><br />
+    <%= f.text_area :profile %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
