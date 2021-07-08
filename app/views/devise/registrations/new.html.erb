@@ -2,9 +2,7 @@
 <h2>新規登録</h2>
 
 <%#= render 'shared/error_messages', model: f.object %>
-
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_with model: @user, url: user_registration_path,  local: true do |f| %>
 
   <div class="field">
     <%= f.label :nickname %><br/>
