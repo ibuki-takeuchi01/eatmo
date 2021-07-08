@@ -26,13 +26,13 @@
  | shop_name          | string     | null: false                    |
  | genre_id           | integer    | null: false                    |
  | phone              | integer    | null: false                    |
- | prefecture_id      | integer    | null: false                  |
- | address            | integer    | null: false                   |
- | traffic            | integer    | null: false                    |
- | operating_hours    | integer    | null: false                    |
+ | prefecture_id      | integer    | null: false                    |
+ | address            | string     | null: false                    |
+ | traffic            | text       | null: false                    |
+ | operating_hours    | text       | null: false                    |
  | budget_id          | integer    | null: false                    |
  | seat               | integer    | null: false                    |
- | other              | integer    | null: false                    |
+ | other              | text       |                                |
  | owner              | references | null: false, foreign_key: true |
  | operation          | references | null: false, foreign_key: true |
 

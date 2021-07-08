@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_054248) do
+ActiveRecord::Schema.define(version: 2021_07_08_054115) do
 
   create_table "operations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -47,6 +47,25 @@ ActiveRecord::Schema.define(version: 2021_07_07_054248) do
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
+  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shop_name", null: false
+    t.integer "genre_id", null: false
+    t.integer "phone", null: false
+    t.integer "prefecture_id", null: false
+    t.string "address", null: false
+    t.string "traffic", null: false
+    t.string "operating_hours", null: false
+    t.integer "budget_id", null: false
+    t.integer "seat", null: false
+    t.text "other"
+    t.bigint "owner_id"
+    t.bigint "operation_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["operation_id"], name: "index_shops_on_operation_id"
+    t.index ["owner_id"], name: "index_shops_on_owner_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.integer "prefecture_id", null: false
@@ -67,4 +86,6 @@ ActiveRecord::Schema.define(version: 2021_07_07_054248) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shops", "operations"
+  add_foreign_key "shops", "owners"
 end
