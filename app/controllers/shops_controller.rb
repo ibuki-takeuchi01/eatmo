@@ -1,5 +1,14 @@
 class ShopsController < ApplicationController
 
+  def index
+  end
+
+  def new
+  end
+
+  def create
+  end
+
   private
 
   def shop_params

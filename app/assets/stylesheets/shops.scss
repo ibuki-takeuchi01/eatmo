@@ -1,3 +1,32 @@
-// Place all the styles related to the shops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header-logo{
+  width: 100%;
+}
+
+.shop-lists {
+  display: flex;
+  margin: 5px 25vh;
+}
+
+.shop-list {
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid #cccccc;
+    display: inline;
+    font-family:serif;
+}
+
+.review-info {
+  margin:15px 50px;
+  float: right;
+}
+
+.shop-name {
+  font-size: 26px;
+  margin: 10px auto;
+}
+
+.address, .star-btn, .budget, .operating-hours, .seat {
+  margin-top: 5px;
+  font-size: 16px;
+}

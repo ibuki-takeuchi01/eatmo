@@ -5,7 +5,9 @@
 
   <%# 画面上部の「画像スクロール」部分 %>
 <div class = "image-content">
+<%= link_to( shops_path, class: 'purchase-btn') do %>
 <div><%= image_tag "logo.png", class:"image" %></div>
+<% end %>
 <div><%= image_tag "img_4000.png", class:"image" %></div>
 <div><%= image_tag "img_2781.png", class:"image" %></div>
 </div>
@@ -163,11 +165,11 @@
         <%= image_tag "img_0361.png", class: "review-img" %>
         <div class='review-info'>
           <h3 class='review-name'>
-            最高の味でした！
+            最高の味でした！ <%="ibuki"%>
           </h3>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+              <span class='star-count'>53</span>
             </div>
         </div>
         <% end %>

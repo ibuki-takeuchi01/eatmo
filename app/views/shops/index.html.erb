@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+  <%= link_to image_tag("logo_3.png", class:"header-logo"), root_path %>
+
+
+<div class='shop-contents'>
+    <ul class='shop-lists'>
+      <li class='shop-list'>
+        <%=link_to image_tag("img_2599.png", class: "review-img"),"#" %>
+        <div class='review-info'>
+          <h1 class='shop-name'>
+            <a href ="#">居酒屋　維吹</a>
+          </h1>
+            <div class="address">
+              東京駅徒歩7分 / 居酒屋・和食
+              <div class='star-btn'>
+                お気に入り:<%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>34</span>
+              </div>
+              <div class="budget">
+                予算 : 3000円~3999円
+              </div>
+              <div class="operating-hours">
+              営業時間: 17:00〜23:00(Lo:22:30)
+              </div>
+              <div class="seat">
+              席数: 45席
+              </div>
+            </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <%= render "shared/footer" %>
