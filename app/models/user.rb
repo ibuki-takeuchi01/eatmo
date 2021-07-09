@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
           with_options presence: true do
             validates :nickname
-            validates :prefecture_id
+            validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
             validates :last_name, format: { with: /\A[ぁ-んァ-ヶ一-龥ー]+\z/ }
             validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥ー]+\z/ }
             validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
@@ -17,4 +17,7 @@ class User < ApplicationRecord
       
               has_many :owners
               has_many :shops
+
+              extend ActiveHash::Associations::ActiveRecordExtensions
+              belongs_to :prefecture
       end
