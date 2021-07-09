@@ -4,15 +4,17 @@
 
 .shop-lists {
   display: flex;
+  display: block;
   justify-content: center;
 }
 
 .shop-list {
-  padding: 0.5em 1em;
-    margin: 2em 0;
+    height:40vh;
+    width: 100vh;
+    padding: 5px 20px;
+    margin: 15px auto;
     font-weight: bold;
     border: solid #cccccc;
-    display: inline;
     font-family:serif;
 }
 

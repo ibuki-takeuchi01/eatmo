@@ -4,6 +4,35 @@
 
 <div class='shop-contents'>
     <ul class='shop-lists'>
+    <% @shops.each do |shop| %>
+    <li class='shop-list'>
+      <%#= link_to shop_path(shop_id) do %>
+        <%= image_tag shop.images[0], class: "shop-img" %>
+        <div class='shop-info'>
+          <h1 class='shop-name'>
+            <a href ="#"><%=shop.shop_name %></a>
+          </h1>
+            <div class="address">
+              <%= shop.traffic%> / <%= shop.genre.name %>
+              <div class='review'>
+                <span>★★★☆☆</span> 3.11(24件)
+              </div>
+              <div class="budget">
+                予算 : <%= shop.budget.name%>
+              </div>
+              <div class="operating-hours">
+              営業時間: <%=shop.operating_hours %>
+              </div>
+              <div class="seat">
+              席数: <%= shop.seat%>席
+              </div>
+              <div class="other">
+              <%=shop.other%>
+              </div>
+            </div>
+        </div>
+      </li>
+      <% end %>
       <li class='shop-list'>
         <%=link_to image_tag("img_2599.png", class: "shop-img"),"#" %>
         <div class='shop-info'>
@@ -16,7 +45,7 @@
                 <span>★★★★☆</span> 3.91(77件)
               </div>
               <div class="budget">
-                予算 : 3000円~3999円
+                予算 : 4,000円〜4,999円
               </div>
               <div class="operating-hours">
               営業時間: 17:00〜23:00(Lo:22:30)

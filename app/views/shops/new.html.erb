@@ -1,6 +1,7 @@
 <h1>店舗登録画面</h1>
 
     <%= form_with  model: @shop, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label :shop_name, "店舗の名称" %><br />
     <%= f.text_field :shop_name %>
