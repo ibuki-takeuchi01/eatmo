@@ -97,11 +97,13 @@
   line-height: 25px;
   margin-right: 3vw;
   color: #333333;
+
 }
 
-.sign-up {
+.sign-up{
   text-decoration: none;
   color: #333333;
+  margin-right: 3vw;
 }
 
 .mypage {

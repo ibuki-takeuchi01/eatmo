@@ -15,5 +15,6 @@ class Shop < ApplicationRecord
     belongs_to :owner
     belongs_to :operation
     has_many :reviews
-    has_one_attached :image
+    has_many_attached :images
+    has_one_attached :video
 end

@@ -4,7 +4,7 @@
 
 .shop-lists {
   display: flex;
-  margin: 5px 25vh;
+  justify-content: center;
 }
 
 .shop-list {
@@ -16,9 +16,14 @@
     font-family:serif;
 }
 
-.review-info {
-  margin:15px 50px;
+.shop-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.shop-info {
   float: right;
+  margin:15px 50px;
 }
 
 .shop-name {
@@ -26,7 +31,12 @@
   margin: 10px auto;
 }
 
-.address, .star-btn, .budget, .operating-hours, .seat {
+.address, .review, .budget, .operating-hours, .seat, .other {
   margin-top: 5px;
   font-size: 16px;
+}
+
+.review span {
+  font-size: 22px;
+  text-shadow: 3px black;
 }
