@@ -7,10 +7,11 @@
     <%= f.text_field :shop_name %>
   </div>
 
-    <div class="field">
+    <div class="field", id="shop_image">
     <%= f.label :images, "トップ写真" %><br />
-    <%= f.file_field :images %>
+    <%= f.file_field :images, name: 'shop[images][]',id:"shop-image" %>
   </div>
+  <div id="image-list"></div>
 
       <div class="field">
     <%= f.label :video, "動画" %><br />
