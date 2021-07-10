@@ -9,9 +9,9 @@
       <%#= link_to shop_path(shop_id) do %>
         <%= image_tag shop.images[0], class: "shop-img" %>
         <div class='shop-info'>
-          <h1 class='shop-name'>
-            <a href ="#"><%=shop.shop_name %></a>
-          </h1>
+          <div class="shop-name">
+            <%= link_to shop.shop_name, shop_path(shop), class: :shop_name %>
+          </div>
             <div class="address">
               <%= shop.traffic%> / <%= shop.genre.name %>
               <div class='review'>
