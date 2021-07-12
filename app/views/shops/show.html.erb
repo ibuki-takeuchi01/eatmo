@@ -1,3 +1,116 @@
 <%= render "shared/header" %>
 
+<div class="show-contets">
+<%# ヘッダー部分 %>
+  <div class="header-content">
+    <div class="left-content">
+      <p class="top-comment">
+        <%= @shop.other %>
+      </p>
+      <h1 class="shop-information">
+        <%= @shop.shop_name%>
+        </h1>
+        <h2 class='review'>
+          <span>★★★☆☆</span> 3.11(24件)
+        </h2>
+    </div>
+    <% if current_owner == @shop.owner || curent_operation == @shop.operation%>
+    <div class="right-second-content">
+      <%= link_to "編集する", edit_shop_path(@shop), class: :shop_btn %>
+      <%= link_to "削除する", shop_path(@shop), method: :delete, class: :delete_btn %>
+    </div>
+    <% end %>
+    <div class="right-content">
+      <a class="btn save">保存する</a>
+      <a class="btn review-new">口コミ投稿<a>
+    </div>
+  </div>
+  <%# ヘッダー部分 %>
+
+  <%# タブ一覧 %>
+  <div class="second-header">
+    <ul class="index-lists">
+      <li><a href="#">トップ</a></li>
+      <li><a href="#">メニュー</a></li>
+      <li><a href="#">店内・外観</a></li>
+      <li><a href="#">写真</a></li>
+      <li><a href="#">口コミ</a></li>
+  </div>
+  <%# タブ一覧 %>
+
+  <%# メイン情報 %>
+  <div class="main-content">
+    <div class="mov-content">
+    <%= image_tag "img_4001.png", class:"mov" %>
+    </div>
+    <div class="main-right-content">
+      <div class="shop-message">
+      <span class="box-title">お店のこだわり</span>
+      <p>【宮崎駅徒歩5分】個室完備『黒毛和牛のトリュフ肉飯』飲放付コース5500円⇒4500円
+      美味しすぎる絶品美味を味わいくださいませ♪</p>
+      </div>
+      <ul class="main-date">
+        <li class="phone">電話番号</li>
+        <p><%= @shop.phone%></p>
+        <li class="address">住所・アクセス</li>
+        <p><%= @shop.address%></p>
+        <p><%= @shop.traffic%></p>
+        <li class="hours">営業時間</li>
+        <p><%= @shop.operating_hours%></p>
+      </ul>
+    </div>
+  </div>
+  <%# メイン情報 %>
+
+  <%# 写真ギャラリー %>
+  <div class="img-gallery">
+    <% @shop.images.each do |image| %>
+    <%= image_tag image, class: 'img-item' %>
+    <% end %>
+  </div>
+  <%# 写真ギャラリー %>
+
+  <div class="review-content"></div>
+  <div class="shop-date">
+    <h1 class="date-title">店舗詳細</h1>
+    <div class="shop-date-table">
+      <table>
+        <tr>
+        <th>店名</td>
+        <td><%= @shop.shop_name %></td>
+        </tr>
+        <tr>
+        <th>ジャンル</td>
+        <td><%= @shop.genre.name %></td>
+        </tr>
+        <tr>
+        <th>住所</td>
+        <td><%= @shop.address %> </td>
+        </tr>
+        <tr>
+        <th>アクセス</td>
+        <td><%= @shop.traffic %></td>
+        </tr>
+        <tr>
+        <th>営業時間</td>
+        <td><%= @shop.operating_hours %>
+        </td>
+        </tr>
+        <tr>
+        <th>電話</td>
+        <td><%= @shop.phone %></td>
+        </tr>
+        <tr>
+        <th>予算</td>
+        <td><%= @shop.budget.name %></td>
+        </tr>
+        <tr>
+        <th>席数</td>
+        <td><%= @shop.seat %>席</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
   <%= render "shared/footer" %>

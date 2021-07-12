@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :homes, only: [:index]
-  resources :shops, only: [:index, :new, :create, :show]
+  resources :shops
 
   devise_for :operations, controllers: {
     sessions:      'operations/sessions',
