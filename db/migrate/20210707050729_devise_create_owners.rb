@@ -10,7 +10,7 @@ class DeviseCreateOwners < ActiveRecord::Migration[6.0]
       t.string  :last_name_kana,  null: false
       t.string  :first_name_kana, null: false
       t.string  :shop_name,       null: false
-      t.integer :personal_phone,  null: false
+      t.string :personal_phone,  null: false
       t.references :shop,         foreign_key: true
       t.references :operation,    foreign_key: true
       t.string :email,              null: false, default: ""

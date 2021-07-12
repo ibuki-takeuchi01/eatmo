@@ -25,14 +25,14 @@
  | ------------------ | ---------- | ------------------------------ |
  | shop_name          | string     | null: false                    |
  | genre_id           | integer    | null: false                    |
- | phone              | integer    | null: false                    |
- | prefecture_id      | integer    | null: false                  |
- | address            | integer    | null: false                   |
- | traffic            | integer    | null: false                    |
- | operating_hours    | integer    | null: false                    |
+ | phone              | string     | null: false                    |
+ | prefecture_id      | integer    | null: false                    |
+ | address            | string     | null: false                    |
+ | traffic            | text       | null: false                    |
+ | operating_hours    | text       | null: false                    |
  | budget_id          | integer    | null: false                    |
  | seat               | integer    | null: false                    |
- | other              | integer    | null: false                    |
+ | other              | text       |                                |
  | owner              | references | null: false, foreign_key: true |
  | operation          | references | null: false, foreign_key: true |
 
@@ -65,7 +65,7 @@
  | last_name_kana      | string     | null: false                    |
  | first_name_kana     | string     | null: false                    |
  | shop_name           | string     | null: false                    |
- | personal_phone      | integer    | null: false                   |
+ | personal_phone      | string     | null: false                   |
  | email               | string     | null: false ,unique: true      |
  | encrypted_password  | string     | null: false                    |
  | shop                | references | null: false, foreign_key: true |

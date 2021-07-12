@@ -1,0 +1,240 @@
+.show-contets {
+  max-width: 1450px;
+}
+
+/* ヘッダー部分 */
+.header-content {
+  width: 99%;
+  display: flex;
+  margin: 5px auto; 
+  background-color: #fffaf0;
+}
+
+.left-content {
+  margin: auto 70px;
+  font-family:serif;
+}
+
+.left-content p {
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.left-content h1 {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px 0 0 3px;
+}
+
+.left-content h2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.right-content{
+  margin: 0 0 0 10px;
+}
+
+.right-second-content{
+  margin: 0 0 0 auto;
+  
+}
+
+.shop_btn, .delete_btn {
+  padding: 8px 24px;
+  margin: 15px 0;
+  color: white;
+  opacity: 0.7;
+  display: block;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.shop_btn {
+  background-color: #cccccc;
+}
+
+.delete_btn {
+  background-color:red;
+}
+
+.shop_btn:hover, .delete_btn:hover {
+  opacity: 1;
+}
+
+
+
+.btn {
+  padding: 8px 24px;
+  margin: 15px 80px 15px 0;
+  color: white;
+  opacity: 0.8;
+  display: block;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.save {
+  background-color: #55acee;
+  text-align: center;
+}
+
+.review-new {
+  background-color: #ffa500;
+}
+
+/* タブ部分 */
+.index-lists {
+  width: 90%;
+  display: flex;
+  margin: 20px auto; 
+  font-family:serif;
+  background-color: #fff;
+}
+
+.index-lists li {
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  opacity: 0.8;
+  border-radius: 2px;
+  padding: 15px 0;
+}
+
+.index-lists li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.index-lists li:hover {
+  opacity: 1;
+  background-color: #eeeeee;
+}
+
+/* タブ部分 */
+
+/* メイン部分 */
+.main-content {
+  width: 80%;
+  height: 60%;
+  margin: 5px auto 20px; 
+  display: flex;
+  font-family:serif;
+}
+
+.mov-content {
+  display: block;
+  margin:5px 15px 5px 5px;
+  width: 60%
+}
+
+.mov{
+  width: 100%;
+  background-size: contain;
+}
+
+.main-right-content {
+  width: 40%;
+  display: block;
+}
+
+.shop-message {
+  height: 45%;
+  background-color: #fffaf0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.shop-message p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main-date ul, .main-date li{
+  color: black;
+  border-left: solid 8px orange;
+  background: whitesmoke;
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;
+  padding: 0.5em;
+  list-style-type: none!important;
+  margin-top: 10px;
+}
+
+.phone, .address, .hours {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.main-date p {
+  font-size: 13px;
+  padding: 2px;
+}
+
+/* メイン部分 */
+
+/* 写真ギャラリー */
+
+.img-gallery {
+  display:flex;
+  margin: 30px auto; 
+  overflow-x:scroll;
+  width: 85%;
+}
+
+.img-item{
+  max-width: 300px;
+  max-height: 240px;
+}
+
+/* 写真ギャラリー */
+
+/* 店舗詳細 */
+
+.shop-date {
+  display: block;
+  width: 70%;
+  margin: 30px auto;
+  font-family:serif;
+}
+
+.date-title {
+  margin: 0 auto 15px;
+  font-weight: bold;
+  font-size: 22px;
+  border-right: none;
+  border-bottom: 5px solid #ffa500;
+  max-width: 30%;
+  text-align: center;
+  padding: 7px 0;
+  letter-spacing: 5px;
+}
+
+
+
+.shop-date-table table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  border-bottom: 1px solid 
+}
+
+.shop-date-table th{
+  text-align: center;
+  padding: 10px 0;
+}
+
+.shop-date-table td{
+  font-size: 14px;
+  padding: 10px 0 3px 10px;
+}
+
+/* 店舗詳細 */

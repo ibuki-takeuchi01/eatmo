@@ -36,7 +36,7 @@
 
     <div class="field">
     <%= f.label :prefecture_id %><br />
-    <%= f.text_field :prefecture_id, start_year: 1950, end_year: 2019 %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {},{class:"form__text"}) %>
   </div>
 
     <div class="field">

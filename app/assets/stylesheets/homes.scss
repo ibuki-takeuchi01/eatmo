@@ -39,6 +39,43 @@ a {
   line-height: 40px;
 }
 
+.search-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-icon {
+  width: 15vw;
+  margin-right: 10vw;
+}
+
+.search-form {
+  width: 65vw;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #ffa500;
+  padding: 8px;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+
 /* 画面上部の「検索窓」部分 */
 
 /* エリアから探す部分 */

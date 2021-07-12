@@ -1,0 +1,45 @@
+.header-logo{
+  width: 100%;
+}
+
+.shop-lists {
+  display: flex;
+  display: block;
+  justify-content: center;
+}
+
+.shop-list {
+    height:40vh;
+    width: 100vh;
+    padding: 5px 20px;
+    margin: 15px auto;
+    font-weight: bold;
+    border: solid #cccccc;
+    font-family:serif;
+}
+
+.shop-img {
+  width: 36vh;
+  height: 36vh;
+
+}
+
+.shop-info {
+  float: right;
+  margin:15px 50px;
+}
+
+.shop-name {
+  font-size: 26px;
+  margin: 10px auto;
+}
+
+.address, .review, .budget, .operating-hours, .seat, .other {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.review span {
+  font-size: 22px;
+  text-shadow: 3px black;
+}
