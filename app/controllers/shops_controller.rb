@@ -19,6 +19,8 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = @shop.reviews
   end
 
   def edit

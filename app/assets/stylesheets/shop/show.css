@@ -31,16 +31,16 @@
   font-weight: normal;
 }
 
-.right-content{
-  margin: 0 0 0 10px;
-}
-
-.right-second-content{
+.right-btn {
+  display: flex;
   margin: 0 0 0 auto;
-  
 }
 
-.shop_btn, .delete_btn {
+.right-content{
+  margin: 0 25px 0 15px;
+}
+
+.shop_btn, .delete_btn, .review-new, .btn-save {
   padding: 8px 24px;
   margin: 15px 0;
   color: white;
@@ -48,6 +48,10 @@
   display: block;
   border-radius: 4px;
   text-align: center;
+}
+
+.shop_btn:hover, .delete_btn:hover, .review-new:hover, .btn-save:hover {
+  opacity: 1;
 }
 
 .shop_btn {
@@ -58,28 +62,8 @@
   background-color:red;
 }
 
-.shop_btn:hover, .delete_btn:hover {
-  opacity: 1;
-}
-
-
-
-.btn {
-  padding: 8px 24px;
-  margin: 15px 80px 15px 0;
-  color: white;
-  opacity: 0.8;
-  display: block;
-  border-radius: 4px;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
-.save {
+.btn-save {
   background-color: #55acee;
-  text-align: center;
 }
 
 .review-new {
@@ -194,6 +178,21 @@
 }
 
 /* 写真ギャラリー */
+
+/* 口コミ */
+
+.review-content {
+  display: block;
+  width: 70%;
+  margin: 30px auto;
+  font-family:serif;
+}
+
+.review-list {
+  text-align: center;
+}
+
+/* 口コミ */
 
 /* 店舗詳細 */
 

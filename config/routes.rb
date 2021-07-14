@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :homes, only: [:index]
-  resources :shops
+  resources :shops do
+    resources :reviews, only: [:index, :new, :create]
+    resources :homes, only: [:index]
+  end
 
   devise_for :operations, controllers: {
     sessions:      'operations/sessions',
@@ -15,6 +17,6 @@ Rails.application.routes.draw do
     sessions:      'users/sessions',
     registrations: 'users/registrations'
   }
-  get 'homes/index'
+
   root to: "homes#index"
 end

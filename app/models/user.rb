@@ -15,8 +15,7 @@ class User < ApplicationRecord
             end
             validates :encrypted_password,:password,:password_confirmation,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
       
-              has_many :owners
-              has_many :shops
+              has_many :reviews, dependent: :destroy
 
               extend ActiveHash::Associations::ActiveRecordExtensions
               belongs_to :prefecture

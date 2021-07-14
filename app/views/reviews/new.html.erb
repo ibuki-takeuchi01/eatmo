@@ -1,0 +1,24 @@
+レビュー機能
+
+<%= form_with  model: [@shop, @review], url:  shop_reviews_path, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  ★★★★☆レビュー機能は追加実装予定
+    <div class="field">
+    <%= f.label :rate, "レビュー評価" %><br />
+    <%= f.text_field :rate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "コメント" %><br />
+    <%= f.text_area :content, class: :form__text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "口コミを登録する", class: :form__btn  %>
+  </div>
+<% end %>

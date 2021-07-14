@@ -14,6 +14,7 @@
           <span>★★★☆☆</span> 3.11(24件)
         </h2>
     </div>
+  <div class="right-btn">
     <% if current_owner == @shop.owner || curent_operation == @shop.operation%>
     <div class="right-second-content">
       <%= link_to "編集する", edit_shop_path(@shop), class: :shop_btn %>
@@ -21,9 +22,10 @@
     </div>
     <% end %>
     <div class="right-content">
-      <a class="btn save">保存する</a>
-      <a class="btn review-new">口コミ投稿<a>
+      <a class="btn-save">保存する</a>
+      <%= link_to "口コミ投稿", new_shop_review_path(@shop), class: "review-new" %>
     </div>
+  </div>
   </div>
   <%# ヘッダー部分 %>
 
@@ -70,7 +72,24 @@
   </div>
   <%# 写真ギャラリー %>
 
-  <div class="review-content"></div>
+  <%# 口コミ一覧 %>
+
+  <div class="review-content">
+    <h1 class="date-title">口コミ</h1>
+    <ul class="reviews-lists">
+    <% @reviews.each do |review| %>
+      <li class="review-list">
+      <%= link_to "（#{review.user.nickname}）", class: :comment_user %>
+      <%= review.title%>
+      <%= review.content%>(7月14日)
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  
+
+  <%# 口コミ一覧 %>
+
   <div class="shop-date">
     <h1 class="date-title">店舗詳細</h1>
     <div class="shop-date-table">
