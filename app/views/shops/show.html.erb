@@ -74,19 +74,22 @@
 
   <%# 口コミ一覧 %>
 
-          <ul class="comments_lists">
-          <% @reviews.each do |review| %>
-            <li class="reviews_list">
-              <%= review.title%>
-              <%= review.content%>
-              <%= link_to "（#{review.user.nickname}）", class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
+  <div class="review-content">
+    <h1 class="date-title">口コミ</h1>
+    <ul class="reviews-lists">
+    <% @reviews.each do |review| %>
+      <li class="review-list">
+      <%= link_to "（#{review.user.nickname}）", class: :comment_user %>
+      <%= review.title%>
+      <%= review.content%>(7月14日)
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  
 
-            <%# 口コミ一覧 %>
+  <%# 口コミ一覧 %>
 
-  <div class="review-content"></div>
   <div class="shop-date">
     <h1 class="date-title">店舗詳細</h1>
     <div class="shop-date-table">

@@ -37,7 +37,7 @@
 }
 
 .right-content{
-  margin: 0 0 0 15px;
+  margin: 0 25px 0 15px;
 }
 
 .shop_btn, .delete_btn, .review-new, .btn-save {
@@ -178,6 +178,21 @@
 }
 
 /* 写真ギャラリー */
+
+/* 口コミ */
+
+.review-content {
+  display: block;
+  width: 70%;
+  margin: 30px auto;
+  font-family:serif;
+}
+
+.review-list {
+  text-align: center;
+}
+
+/* 口コミ */
 
 /* 店舗詳細 */
 
