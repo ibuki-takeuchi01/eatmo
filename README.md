@@ -47,8 +47,8 @@
  | Column            | Type       | Options                        |
  | ----------------- | ---------- | ------------------------------ |
  | title             | string     | null: false                    |
- | rate              | integer    | null: false                    |
- | content           | string     | null: false                    |
+ | rate              | float      | null: false                    |
+ | content           | text       | null: false                    |
  | user              | references | null: false, foreign_key: true |
  | shop              | references | null: false, foreign_key: true |
 
