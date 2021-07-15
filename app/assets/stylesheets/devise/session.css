@@ -1,0 +1,30 @@
+.btn-wrapper {
+  color: white;
+  display: inline-block;
+  margin: 15px 50px;
+}
+
+.facebook_btn {
+  border:solid 1px #3b5998;
+  color:#3b5998;
+  opacity: 0.7;
+  padding: 8px 24px;
+}
+
+.facebook_btn:hover {
+    border:solid 1px #3b5998;
+    opacity: 1;
+}
+
+
+.google_btn {
+  border:solid 1px red;
+  color: red;
+  opacity: 0.7;
+  padding: 8px 24px;
+}
+
+.google_btn:hover {
+  border:solid 1px red;
+  opacity: 1;
+}
