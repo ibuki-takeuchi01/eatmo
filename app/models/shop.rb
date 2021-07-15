@@ -16,6 +16,7 @@ class Shop < ApplicationRecord
     has_many_attached :images
     has_one_attached :video
 
+
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :genre
     belongs_to :prefecture

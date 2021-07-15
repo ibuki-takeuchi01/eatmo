@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :homes, only: [:index]
+  get 'shops/search'
+
   resources :shops do
     resources :reviews, only: [:index, :new, :create]
-    resources :homes, only: [:index]
   end
 
   devise_for :operations, controllers: {

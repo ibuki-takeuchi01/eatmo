@@ -42,6 +42,11 @@ class ShopsController < ApplicationController
     end
   end
 
+  def search
+    @p = Shop.ransack(params[:q])
+    @results = @p.result  # 検索条件にマッチした商品の情報を取得
+  end
+
   private
 
   def shop_params

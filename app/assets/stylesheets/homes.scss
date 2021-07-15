@@ -23,38 +23,19 @@ a {
 /*  画面上部の「画像スクロール」部分 */
 
 /*  画面上部の「検索窓」部分 */
-.title-contents {
-  width: 100vw;
-  height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 10px 15vw;
-  color: #fff;
-}
-
-.service-explain {
-  font-size: 2.5vh;
-  line-height: 40px;
-}
 
 .search-bar-contents {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   align-items: center;
-}
-
-.site-icon {
-  width: 15vw;
-  margin-right: 10vw;
+  width: 80%;
+  margin: 0 auto; 
 }
 
 .search-form {
-  width: 65vw;
+  width: 60vw;
   height: 5vh;
   display: flex;
-  margin-bottom: 5px;
+  margin: 0 auto; 
 }
 
 .search-form>.input-box {
@@ -69,12 +50,12 @@ a {
   cursor: pointer;
   background-color: #ffa500;
   padding: 8px;
+  opacity: 0.7;
 }
 
-.search-icon {
-  width: 100%;
+.search-button:hover {
+  opacity: 1;
 }
-
 
 /* 画面上部の「検索窓」部分 */
 
