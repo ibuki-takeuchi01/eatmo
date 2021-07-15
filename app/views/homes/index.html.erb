@@ -15,21 +15,22 @@
 <%# 画面上部の「画像スクロール」部分 %>
 
   <%# 画面上部の「検索窓」部分 %>
-      <div class='select-index'>
-    <h2 class='title'>
-      キーワードから探す
-    </h2>
-    </div>
-  <div class='title-contents'>
-    <p class='service-explain'>
-      <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワード[例:渋谷、居酒屋、個室]'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
-    </p>
+<div class='search-bar-contents'>
+  <div class='select-index'>
+  <h2 class='title'>
+    キーワードから探す
+  </h2>
   </div>
+  <div>
+    <%= search_form_for @p, url: shops_search_path, class: "search-form" do |f| %>
+        <%= f.text_field :traffic_cont, class: 'input-box' ,placeholder: 'エリア・駅 [ 例: 渋谷、新橋 ] ' %>
+    <%= f.text_field :shop_name_cont, class: 'input-box' ,placeholder: 'キーワード [ 例: 居酒屋 個室 ] ' %>
+    <br>
+    <%= image_submit_tag ("search.png"), class:"search-button" %>
+    <% end %>
+  </div>
+</div>
+
   <%# /画面上部の「検索窓」帯部分  %>
 
   <%# エリアから探す部分 %>

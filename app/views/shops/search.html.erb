@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+  <%= link_to image_tag("logo_3.png", class:"header-logo"), root_path %>
+
+<div class='shop-contents'>
+    <ul class='shop-lists'>
+    <% if @results.length !=0 %>
+    <% @results.each do |result| %>
+    <li class='shop-list'>
+        <%= image_tag result.images[0], class: "shop-img" %>
+        <div class='shop-info'>
+          <div class="shop-name">
+            <%= link_to result.shop_name, shop_path(result), class: :shop_name %>
+          </div>
+            <div class="address">
+              <%= result.traffic%> / <%= result.genre.name %>
+              <div class='review'>
+                <span>★★★☆☆</span> 3.11(24件)
+              </div>
+              <div class="budget">
+                予算 : <%= result.budget.name%>
+              </div>
+              <div class="operating-hours">
+              営業時間: <%=result.operating_hours %>
+              </div>
+              <div result="seat">
+              席数: <%= result.seat%>席
+              </div>
+              <div class="other">
+              <%=result.other%>
+              </div>
+            </div>
+        </div>
+      </li>
+      <% end %>
+      <% else %>
+      該当する店舗はありません
+      <% end %>
+    </ul>
+  </div>
+
+  <%= render "shared/footer" %>
