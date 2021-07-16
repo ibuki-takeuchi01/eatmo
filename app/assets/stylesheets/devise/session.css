@@ -47,7 +47,7 @@
   font-weight: bold;
 }
 
-.input-default {
+.input-default, .select-box {
   width: 100%;
   margin-top: 5px;
   height: 48px;
@@ -129,4 +129,9 @@
 .google_btn:hover {
   border:solid 1px red;
   opacity: 1;
+}
+
+.owner-sign-up {
+  text-align: center;
+  margin-top: 10px;
 }

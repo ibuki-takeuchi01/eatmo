@@ -1,5 +1,5 @@
 <div class="all-session">
-<%= link_to image_tag("logo_3.png", class:"header-logo"), root_path %>
+<%= link_to image_tag("logo_5.png", class:"header-logo"), root_path %>
 <%= form_with model: @operation, url: operation_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -26,6 +26,9 @@
   </div>
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
+  </div>
+  <div class="owner-sign-up">
+    <%= link_to '▶️クライアント登録はこちら', new_owner_registration_path, class: "owner-sign-up" %>
   </div>
 </div>
 </div>
