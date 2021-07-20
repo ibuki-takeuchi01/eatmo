@@ -33,17 +33,6 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "homes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "shop_id"
-    t.bigint "user_id"
-    t.bigint "review_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["review_id"], name: "index_homes_on_review_id"
-    t.index ["shop_id"], name: "index_homes_on_shop_id"
-    t.index ["user_id"], name: "index_homes_on_user_id"
-  end
-
   create_table "operations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -67,7 +56,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
     t.string "shop_name", null: false
-    t.integer "personal_phone", null: false
+    t.string "personal_phone", null: false
+    t.bigint "operation_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -76,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_owners_on_email", unique: true
+    t.index ["operation_id"], name: "index_owners_on_operation_id"
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
@@ -93,8 +84,9 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "shop_name", null: false
+    t.text "article"
     t.integer "genre_id", null: false
-    t.integer "phone", null: false
+    t.string "phone", null: false
     t.integer "prefecture_id", null: false
     t.string "address", null: false
     t.string "traffic", null: false
@@ -140,9 +132,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "homes", "reviews"
-  add_foreign_key "homes", "shops"
-  add_foreign_key "homes", "users"
+  add_foreign_key "owners", "operations"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shops", "operations"
