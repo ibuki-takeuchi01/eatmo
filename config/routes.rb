@@ -16,9 +16,11 @@ Rails.application.routes.draw do
     registrations: 'owners/registrations'
   }
   devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    registrations: 'users/registrations'
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations',
   }
+  get 'users/show'
+
 
   root to: "homes#index"
 end

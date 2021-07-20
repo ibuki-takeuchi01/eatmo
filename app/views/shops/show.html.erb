@@ -15,7 +15,7 @@
         </h2>
     </div>
   <div class="right-btn">
-    <% if current_owner == @shop.owner || curent_operation == @shop.operation%>
+    <% if current_owner == @shop.owner || current_operation %>
     <div class="right-second-content">
       <%= link_to "編集する", edit_shop_path(@shop), class: :shop_btn %>
       <%= link_to "削除する", shop_path(@shop), method: :delete, class: :delete_btn %>
@@ -43,7 +43,7 @@
   <%# メイン情報 %>
   <div class="main-content">
     <div class="mov-content">
-    <%= image_tag "img_4001.png", class:"mov" %>
+    <video class="mov" src="<%= rails_blob_path(@shop.video) %>" type="video/mp4" controls></video>
     </div>
     <div class="main-right-content">
       <div class="shop-message">
