@@ -107,7 +107,7 @@
 .main-content {
   width: 80%;
   height: 60%;
-  margin: 5px auto 20px; 
+  margin: 50px auto 60px; 
   display: flex;
   font-family:serif;
 }
@@ -167,7 +167,7 @@
 
 .img-gallery {
   display:flex;
-  margin: 30px auto; 
+  margin: 50px auto; 
   overflow-x:scroll;
   width: 85%;
 }

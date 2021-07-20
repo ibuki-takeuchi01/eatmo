@@ -43,7 +43,7 @@
   <%# メイン情報 %>
   <div class="main-content">
     <div class="mov-content">
-    <%= image_tag "img_4001.png", class:"mov" %>
+    <video class="mov" src="<%= rails_blob_path(@shop.video) %>" type="video/mp4" controls></video>
     </div>
     <div class="main-right-content">
       <div class="shop-message">

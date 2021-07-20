@@ -23,8 +23,8 @@
   </div>
   <div>
     <%= search_form_for @p, url: shops_search_path, class: "search-form" do |f| %>
-        <%= f.text_field :traffic_cont, class: 'input-box' ,placeholder: 'エリア・駅 [ 例: 渋谷、新橋 ] ' %>
-    <%= f.text_field :shop_name_cont, class: 'input-box' ,placeholder: 'キーワード [ 例: 居酒屋 個室 ] ' %>
+      <%= f.text_field :traffic_cont, class: 'input-box' ,placeholder: 'エリア・駅 [ 例: 渋谷、新橋 ] ' %>
+      <%= f.text_field :shop_name_cont, class: 'input-box' ,placeholder: 'キーワード [ 例: 居酒屋 個室 ] ' %>
     <br>
     <%= image_submit_tag ("search.png"), class:"search-button" %>
     <% end %>
