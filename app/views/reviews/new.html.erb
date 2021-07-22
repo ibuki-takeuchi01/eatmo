@@ -1,25 +1,39 @@
-レビュー機能
+<div class="reviews-content">
+  <%= link_to image_tag("logo_5.png", class:"header-logo"), root_path %>
+  <%= form_with  model: [@shop, @review], url:  shop_reviews_path, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class='form-wrap'>
+    <div class="shop-name">
+      <%= @shop.shop_name%> 
+    </div>
+    <div class="star-field" id="star">
+      <%= f.label :rate,'レビュー：', class:'col-md-3 col-form-label' %>
+      <%= f.hidden_field :rate, id: :review_star %>
+    </div>
+    <div class="review-field">
+      <%= f.text_field :title, class:"input-title", placeholder:"タイトルを入れてください" %>
+      <%= f.text_area :content, class: "input-content",placeholder:"口コミ本文を入れてください"  %>
+    </div>
 
-<%= form_with  model: [@shop, @review], url:  shop_reviews_path, local: true do |f| %>
-<%= render 'shared/error_messages', model: f.object %>
-  <div class="field">
-    <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  ★★★★☆レビュー機能は追加実装予定
-
-    <div class="field">
-    <%= f.label :rate, "レビュー評価" %><br />
-    <%= f.text_field :rate %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content, "コメント" %><br />
-    <%= f.text_area :content, class: :form__text %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "口コミを登録する", class: :form__btn  %>
+    <div class="actions">
+      <%= f.submit "口コミを投稿", class: :review_btn  %>
+    </div>
   </div>
 <% end %>
+
+
+
+  <!-- 評価javascript -->
+  <script>
+    $('#star').raty({
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        scoreName: 'review[rate]',
+        size: 15,
+        });
+  </script>
+</div>
+
+

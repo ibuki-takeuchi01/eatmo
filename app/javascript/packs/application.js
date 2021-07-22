@@ -7,7 +7,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('../preview')
-require('../review.js')
+require('packs/jquery.raty.js')
+window.$ = window.jQuery = require('jquery');
 
 
 

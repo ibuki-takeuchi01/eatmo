@@ -13,7 +13,6 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.integer :seat,            null: false
       t.text    :other
       t.references :owner,        foreign_key: true
-      t.references :operation,    foreign_key: true
       t.timestamps
     end
   end

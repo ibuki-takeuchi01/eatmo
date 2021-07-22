@@ -11,7 +11,6 @@ class DeviseCreateOwners < ActiveRecord::Migration[6.0]
       t.string  :first_name_kana, null: false
       t.string  :shop_name,       null: false
       t.string :personal_phone,  null: false
-      t.references :operation,    foreign_key: true
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

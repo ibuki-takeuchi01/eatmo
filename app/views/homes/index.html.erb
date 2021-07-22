@@ -161,19 +161,33 @@
       新規口コミ一覧
     </div>
     <ul class='review-lists'>
+      <% @reviews.each do |review| %>
+      <% @shops.each do |shop| %>
       <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "img_0361.png", class: "review-img" %>
+        <%= link_to shop_path(shop.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag review.shop.images[0], class: "review-img" %>
+        </div>
         <div class='review-info'>
           <h3 class='review-name'>
-            最高の味でした！ <%="ibuki"%>
+            <%= review.title %>      <%= review.user.nickname%>
           </h3>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>53</span>
-            </div>
         </div>
+        <div id="star-rate<%= review.id%>"></div>  
+          <script>
+            $('#star-rate<%= review.id%>').raty({
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= review.rate %>,
+            });
+          </script>
         <% end %>
+        <% end %>
+      <% end %>
       </li>
     </ul>
   </div>

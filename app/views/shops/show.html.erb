@@ -48,8 +48,7 @@
     <div class="main-right-content">
       <div class="shop-message">
       <span class="box-title">お店のこだわり</span>
-      <p>【宮崎駅徒歩5分】個室完備『黒毛和牛のトリュフ肉飯』飲放付コース5500円⇒4500円
-      美味しすぎる絶品美味を味わいくださいませ♪</p>
+      <p><%= @shop.article%></p>
       </div>
       <ul class="main-date">
         <li class="phone">電話番号</li>
@@ -81,7 +80,19 @@
       <li class="review-list">
       <%= link_to "（#{review.user.nickname}）", class: :comment_user %>
       <%= review.title%>
-      <%= review.content%>(7月14日)
+      <%= review.content%>
+      <div id="star-rate<%= review.id%>"></div>  
+      <script>
+      $('#star-rate<%= review.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= review.rate %>,
+      });
+    </script>
       </li>
     <% end %>
     </ul>

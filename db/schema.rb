@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.string "first_name_kana", null: false
     t.string "shop_name", null: false
     t.string "personal_phone", null: false
-    t.bigint "operation_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -66,7 +65,6 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_owners_on_email", unique: true
-    t.index ["operation_id"], name: "index_owners_on_operation_id"
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
@@ -95,10 +93,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.integer "seat", null: false
     t.text "other"
     t.bigint "owner_id"
-    t.bigint "operation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["operation_id"], name: "index_shops_on_operation_id"
     t.index ["owner_id"], name: "index_shops_on_owner_id"
   end
 
@@ -119,6 +115,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
     t.text "profile"
+    t.string "image"
     t.date "birth_date", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -132,10 +129,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_062454) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "owners", "operations"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
-  add_foreign_key "shops", "operations"
   add_foreign_key "shops", "owners"
   add_foreign_key "sns_credentials", "users"
 end

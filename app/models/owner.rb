@@ -14,6 +14,5 @@ class Owner < ApplicationRecord
         end
         validates :encrypted_password,:password,:password_confirmation,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
   
-        belongs_to :operation
         has_one :shop
   end

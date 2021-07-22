@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
   get 'users/show'
+  
 
 
   root to: "homes#index"

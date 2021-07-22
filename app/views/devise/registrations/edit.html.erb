@@ -3,6 +3,11 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="field", id="shop_image">
+    <%= f.label :image, "アイコン写真" %><br />
+    <%= f.file_field :image, name: 'user[image][]',id:"shop-image" %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

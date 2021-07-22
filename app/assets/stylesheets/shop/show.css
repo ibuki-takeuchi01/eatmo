@@ -129,14 +129,15 @@
 }
 
 .shop-message {
-  height: 45%;
+  height: 50%;
   background-color: #fffaf0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
 .shop-message p {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  text-overflow: scroll;
+  overflow: scroll;
+  font-size: 14px;
 }
 
 .main-date ul, .main-date li{
