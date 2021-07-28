@@ -3,6 +3,7 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.includes(:owner).order(created_at: :desc)
+    @review = Review.new
   end
 
   def new

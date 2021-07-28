@@ -10,9 +10,24 @@
       <h1 class="shop-information">
         <%= @shop.shop_name%>
         </h1>
-        <h2 class='review'>
-          <span>★★★☆☆</span> 3.11(24件)
-        </h2>
+        <div class='review'>
+          <span id="star-rate<%= @shop.id%>"></span> 
+          <script>
+      $('#star-rate<%= @shop.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= @shop.reviews.average(:rate).to_f.round(2) %>,
+      });
+    </script>
+    <p class="review-average">
+      <%= @shop.reviews.average(:rate).to_f.round(2) %></P>
+      <p class="review-count">
+      (<%= @shop.reviews.count%>件)</p>
+        </div>
     </div>
   <div class="right-btn">
     <% if current_owner == @shop.owner || current_operation %>
@@ -81,18 +96,6 @@
       <%= link_to "（#{review.user.nickname}）", class: :comment_user %>
       <%= review.title%>
       <%= review.content%>
-      <div id="star-rate<%= review.id%>"></div>  
-      <script>
-      $('#star-rate<%= review.id%>').raty({
-        size      : 36,
-        starOff   : '<%= asset_path('star-off.png') %>',
-        starOn    : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.rate %>,
-      });
-    </script>
       </li>
     <% end %>
     </ul>

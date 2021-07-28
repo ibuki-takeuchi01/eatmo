@@ -14,7 +14,22 @@
             <div class="address">
               <%= result.traffic%> / <%= result.genre.name %>
               <div class='review'>
-                <span>★★★☆☆</span> 3.11(24件)
+                <span id="star-rate<%= result.id%>"></span> 
+              <script>
+                $('#star-rate<%= result.id%>').raty({
+                size      : 36,
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= result.reviews.average(:rate).to_f.round(2) %>,
+                });
+              </script>
+              <p class="review-average">
+              <%= result.reviews.average(:rate).to_f.round(2) %></P>
+              <p class="review-count">
+              (<%= result.reviews.count%>件)</p>
               </div>
               <div class="budget">
                 予算 : <%= result.budget.name%>

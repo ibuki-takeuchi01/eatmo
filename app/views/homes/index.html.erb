@@ -40,12 +40,16 @@
     </h2>
     <ul class='area-lists'>
       <li class='list'>
-        <%= image_tag "tokyo.png", class:"list-pict" %>
+        <%= link_to( shops_path(@toukyo), class: 'purchase-btn') do %>
+        <%=link_to image_tag "tokyo.png", class:"list-pict" %>
         <span class='list-area'>東京</span>
+        <% end %>
       </li>
       <li class='list'>
+        <%= link_to( shops_path(@oosaka), class: 'purchase-btn') do %>
         <%= image_tag "oosaka.png", class:"list-pict" %>
         <span class='list-area'>大阪</span>
+        <% end %>
       </li>
       <li class='list'>
         <%= image_tag "nagano.png", class:"list-pict" %>
@@ -63,20 +67,20 @@
       <div class = top-left>
         <div class =title><span class="col-1">北海道・東北</span>
         <div class =prefecture>
-          <a href ="#">北海道</a>
-          <a href ="#">青森</a>
-          <a href ="#">秋田</a>
-          <a href ="#">山形</a>
-          <a href ="#">岩手</a>
-          <a href ="#">宮城</a>
-          <a href ="#">福島</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E5%8C%97%E6%B5%B7%E9%81%93&q%5Bshop_name_cont%5D=&x=0&y=0">北海道</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E9%9D%92%E6%A3%AE&q%5Bshop_name_cont%5D=&x=0&y=0">青森</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E7%A7%8B%E7%94%B0&q%5Bshop_name_cont%5D=&x=0&y=0">秋田</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E5%B1%B1%E5%BD%A2&q%5Bshop_name_cont%5D=&x=0&y=0">山形</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E5%B2%A9%E6%89%8B&q%5Bshop_name_cont%5D=&x=0&y=0">岩手</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E5%AE%AE%E5%9F%8E&q%5Bshop_name_cont%5D=&x=0&y=0">宮城</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E7%A6%8F%E5%B3%B6&q%5Bshop_name_cont%5D=&x=0&y=0">福島</a>
         </div>
         </div>
       </div>
       <div class = top-center>
         <div class =title><span class="col-1">関東</span>
         <div class =prefecture>
-          <a href ="#">東京</a>
+          <a href ="http://localhost:3000/shops/search?q%5Btraffic_cont%5D=%E6%9D%B1%E4%BA%AC&q%5Bshop_name_cont%5D=&x=0&y=0">東京</a>
           <a href ="#">神奈川</a>
           <a href ="#">埼玉</a>
           <a href ="#">千葉</a>
@@ -162,9 +166,8 @@
     </div>
     <ul class='review-lists'>
       <% @reviews.each do |review| %>
-      <% @shops.each do |shop| %>
       <li class='list'>
-        <%= link_to shop_path(shop.id) do %>
+        <%= link_to shop_path(review.shop.id) do %>
         <div class='item-img-content'>
           <%= image_tag review.shop.images[0], class: "review-img" %>
         </div>
@@ -185,7 +188,6 @@
             score: <%= review.rate %>,
             });
           </script>
-        <% end %>
         <% end %>
       <% end %>
       </li>

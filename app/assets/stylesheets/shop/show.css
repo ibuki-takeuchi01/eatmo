@@ -26,9 +26,25 @@
   padding: 5px 0 0 3px;
 }
 
-.left-content h2 {
+.review {
+  display: flex;
+}
+
+.review p {
+  padding-left: 5px;
+  font-family:"游ゴシック体";
   font-size: 20px;
+}
+
+.review-average {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.review-count {
   font-weight: normal;
+  font-size: 20px;
 }
 
 .right-btn {
