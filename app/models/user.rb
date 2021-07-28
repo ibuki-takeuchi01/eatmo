@@ -18,6 +18,7 @@ class User < ApplicationRecord
       
               has_many :reviews, dependent: :destroy
               has_many :sns_credentials
+              has_one_attached :image
 
               extend ActiveHash::Associations::ActiveRecordExtensions
               belongs_to :prefecture

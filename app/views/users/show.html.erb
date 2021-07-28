@@ -1,1 +1,24 @@
-あああ
+<div class="user-contents">
+  <div class="user-header">
+    <ul class='lists-right'>
+      <li><%= link_to '保存済み', "#", class: "save" %></li>
+      <li><%= link_to '編集',  edit_user_registration_path(current_user), class: "mypage" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </ul>
+  </div>
+  <div class="icon-content">
+  <p><%= @current_user.image %></p>
+  </div>
+  <div class="second-user-content">
+    <div class="user-nickname">
+    <p><%= @nickname %></p>
+    </div>
+    <div class="user-prefecture">
+    <p><%= @prefecture %></p>
+    </div>
+  </div>
+  <div class="user-profile">
+  <p><%= @profile %></p>
+  </div>
+</div>
+

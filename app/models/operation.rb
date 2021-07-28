@@ -12,6 +12,4 @@ class Operation < ApplicationRecord
         end
         validates :encrypted_password,:password,:password_confirmation,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
   
-        has_many :reviews
-        has_many :shops
   end

@@ -10,7 +10,6 @@ class Shop < ApplicationRecord
     validates :budget_id, numericality: { other_than: 1 , message: "can't be blank"}
     validates :seat
     end
-  
     belongs_to :owner
     has_many :reviews, dependent: :destroy
     has_many_attached :images

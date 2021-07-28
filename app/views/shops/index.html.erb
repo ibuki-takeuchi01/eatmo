@@ -11,21 +11,36 @@
           <div class="shop-name">
             <%= link_to shop.shop_name, shop_path(shop), class: :shop_name %>
           </div>
-            <div class="address">
+            <div class="shop-address">
               <%= shop.traffic%> / <%= shop.genre.name %>
               <div class='review'>
-                <span>★★★☆☆</span> 3.11(24件)
+                <span id="star-rate<%= shop.id%>"></span> 
+              <script>
+                $('#star-rate<%= shop.id%>').raty({
+                size      : 36,
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= shop.reviews.average(:rate).to_f.round(2) %>,
+                });
+              </script>
+              <p class="review-average">
+              <%= shop.reviews.average(:rate).to_f.round(2) %></P>
+              <p class="review-count">
+              (<%= shop.reviews.count%>件)</p>
               </div>
-              <div class="budget">
+              <div class="shop-budget">
                 予算 : <%= shop.budget.name%>
               </div>
-              <div class="operating-hours">
+              <div class="shop-operating-hours">
               営業時間: <%=shop.operating_hours %>
               </div>
-              <div class="seat">
+              <div class="shop-seat">
               席数: <%= shop.seat%>席
               </div>
-              <div class="other">
+              <div class="shop-other">
               <%=shop.other%>
               </div>
             </div>

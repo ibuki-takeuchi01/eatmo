@@ -3,6 +3,7 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.includes(:owner).order(created_at: :desc)
+    @review = Review.new
   end
 
   def new
@@ -50,7 +51,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:shop_name, :genre_id, :phone, :prefecture_id, :address, :traffic, :operating_hours, :budget_id, :seat, :other, :video, images: []).merge(owner_id: current_owner.id)
+    params.require(:shop).permit(:shop_name, :genre_id, :phone, :prefecture_id, :address, :article, :traffic, :operating_hours, :budget_id, :seat, :other, :video, images: []).merge(owner_id: current_owner.id)
   end
 
   def set_shop
