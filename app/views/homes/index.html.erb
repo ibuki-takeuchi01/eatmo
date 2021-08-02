@@ -40,24 +40,28 @@
     </h2>
     <ul class='area-lists'>
       <li class='list'>
-        <%= link_to( shops_path(@toukyo), class: 'purchase-btn') do %>
-        <%=link_to image_tag "tokyo.png", class:"list-pict" %>
+        <%= link_to "https://eatmo.herokuapp.com/shops/search?q%5Btraffic_cont%5D=%E6%9D%B1%E4%BA%AC&q%5Bshop_name_cont%5D=&x=0&y=0" do %>
+        <%=image_tag "tokyo.png", class:"list-pict" %>
         <span class='list-area'>東京</span>
         <% end %>
       </li>
       <li class='list'>
-        <%= link_to( shops_path(@oosaka), class: 'purchase-btn') do %>
+        <%= link_to "https://eatmo.herokuapp.com/shops/search?q%5Btraffic_cont%5D=%E5%A4%A7%E9%98%AA&q%5Bshop_name_cont%5D=&x=0&y=0"  do %>
         <%= image_tag "oosaka.png", class:"list-pict" %>
         <span class='list-area'>大阪</span>
         <% end %>
       </li>
       <li class='list'>
+        <%= link_to "https://eatmo.herokuapp.com/shops/search?q%5Btraffic_cont%5D=%E9%95%B7%E9%87%8E&q%5Bshop_name_cont%5D=&x=0&y=0" do %>
         <%= image_tag "nagano.png", class:"list-pict" %>
         <span class='list-area'>長野</span>
+        <% end %>
       </li>
       <li class='list'>
+        <%= link_to "https://eatmo.herokuapp.com/shops/search?q%5Btraffic_cont%5D=%E4%BA%AC%E9%83%BD&q%5Bshop_name_cont%5D=&x=0&y=0" do %>
         <%= image_tag "kyoto.png", class:"list-pict" %>
         <span class='list-area'>京都</span>
+        <% end %>
       </li>
     </ul>
   </div>
