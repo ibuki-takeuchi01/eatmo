@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :shops do
     resources :reviews, only: [:index, :new, :create]
+    resources :favorites, only: [:create, :destroy]
   end
 
   devise_for :operations, controllers: {

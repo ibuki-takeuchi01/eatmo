@@ -37,7 +37,11 @@
     </div>
     <% end %>
     <div class="right-content">
-      <a class="btn-save">保存する</a>
+    <% if Favorite.find_by(user_id: current_user.id, shop_id: @shop.id) %>
+      <%= link_to "保存済み", shop_favorite_path(@shop), method: :delete, class: :btn_save %>
+    <%  else %>
+      <%= link_to "保存する", shop_favorites_path(@shop), method: :post, class: :btn_save %>
+    <% end %>
       <%= link_to "口コミ投稿", new_shop_review_path(@shop), class: "review-new" %>
     </div>
   </div>
