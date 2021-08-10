@@ -1,47 +1,46 @@
-<%= render "shared/header" %>
   <%= link_to image_tag("logo_5.png", class:"header-logo"), root_path %>
 
 <div class='shop-contents'>
     <ul class='shop-lists'>
-    <% @shops.each do |shop| %>
+    <% @favorites.each do |favorite| %>
     <li class='shop-list'>
       <%#= link_to shop_path(shop_id) do %>
-        <%= image_tag shop.images[0], class: "shop-img" %>
+        <%= image_tag favorite.shop.images[0], class: "shop-img" %>
         <div class='shop-info'>
           <div class="shop-name">
-            <%= link_to shop.shop_name, shop_path(shop), class: :shop_name %>
+            <%= link_to favorite.shop.shop_name, shop_path(favorite.shop), class: :shop_name %>
           </div>
             <div class="shop-address">
-              <%= shop.traffic%> / <%= shop.genre.name %>
+              <%= favorite.shop.traffic%> / <%= favorite.shop.genre.name %>
               <div class='review'>
-                <span id="star-rate<%= shop.id%>"></span> 
+                <span id="star-rate<%= favorite.shop.id%>"></span> 
               <script>
-                $('#star-rate<%= shop.id%>').raty({
+                $('#star-rate<%= favorite.shop.id%>').raty({
                 size      : 36,
                 starOff   : '<%= asset_path('star-off.png') %>',
                 starOn    : '<%= asset_path('star-on.png') %>',
                 starHalf: '<%= asset_path('star-half.png') %>',
                 half: true,
                 readOnly: true,
-                score: <%= shop.reviews.average(:rate).to_f.round(2) %>,
+                score: <%= favorite.shop.reviews.average(:rate).to_f.round(2) %>,
                 });
               </script>
               <p class="review-average">
-              <%= shop.reviews.average(:rate).to_f.round(2) %></P>
+              <%= favorite.shop.reviews.average(:rate).to_f.round(2) %></P>
               <p class="review-count">
-              (<%= shop.reviews.count%>件)</p>
+              (<%= favorite.shop.reviews.count%>件)</p>
               </div>
               <div class="shop-budget">
-                予算 : <%= shop.budget.name%>
+                予算 : <%= favorite.shop.budget.name%>
               </div>
               <div class="shop-operating-hours">
-              営業時間: <%=shop.operating_hours %>
+              営業時間: <%=favorite.shop.operating_hours %>
               </div>
               <div class="shop-seat">
-              席数: <%= shop.seat%>席
+              席数: <%= favorite.shop.seat%>席
               </div>
               <div class="shop-other">
-              <%=shop.other%>
+              <%=favorite.shop.other%>
               </div>
             </div>
         </div>
