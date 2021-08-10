@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :shops do
     resources :reviews, only: [:index, :new, :create]
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
+    get 'users/favorite'
   end
 
   devise_for :operations, controllers: {
@@ -20,8 +21,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
   }
-  get 'users/show'
-  
+  get 'users/show'  
 
 
   root to: "homes#index"

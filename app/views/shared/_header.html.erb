@@ -7,7 +7,7 @@
     </ul>
     <ul class='lists-right'>
     <% if user_signed_in? %>
-      <li><%= link_to '保存済み', "#", class: "save" %></li>
+      <li><%= link_to '保存済み',  shop_users_favorite_path(current_user), class: "save" %></li>
       <li><%= link_to 'マイページ', users_show_path(current_user), class: "mypage" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>

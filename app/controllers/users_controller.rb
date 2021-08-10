@@ -12,10 +12,17 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:id])
     @nickname = current_user.nickname
     @image = current_user.image
     @profile = current_user.profile
     @prefecture = current_user.prefecture.name
+  end
+
+  def favorite
+    @shop = Shop.find(params[:shop_id])
+    @favorites = current_user.favorites
+
   end
 
   private
